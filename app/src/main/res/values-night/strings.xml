@@ -11,4 +11,18 @@
     <string name="txt_reg_pt2">Regístrate</string>
     <string name="txt_reg_pt1">No tienes cuenta?</string>
     <string name="txt_log_goog">Ingresa con Google</string>
+    <string name="txt_register">¿Eres nuevo? Registrate</string>
+    <string name="txt_reg_name">Nombre</string>
+    <string name="txt_reg_lname">Apellidos</string>
+    <string name="txt_reg_email">Correo electronico</string>
+    <string name="txt_reg_TyC">Acepto los Términos y Condiciones</string>
+    <string name="txt_reg_btnlog">Ir al Login</string>
+    <string name="txt_recPassword">Recuperar contraseña</string>
+    <string name="txt_recPassword_sol">Enviar solicitud</string>
+    <string name="txt_userName">Diego Alejandro</string>
+    <string name="txt_userLastName">Ramos Morales</string>
+    <string name="txt_userEmail">dalejandroramos@ucompensar.edu.co</string>
+    <string name="txt_profile">Sus datos:</string>
+    <string name="txt_userPhone">3124840054</string>
+    <string name="txt_profile_bt_edit">Editar</string>
 </resources>
