@@ -25,4 +25,5 @@
     <string name="txt_profile">Sus datos:</string>
     <string name="txt_userPhone">3124840054</string>
     <string name="txt_profile_bt_edit">Editar</string>
+    <string name="op2">Mi perfil</string>
 </resources>

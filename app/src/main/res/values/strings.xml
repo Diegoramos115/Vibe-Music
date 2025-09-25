@@ -28,5 +28,11 @@
     <string name="txt_profile">Sus datos:</string>
     <string name="txt_userPhone">3124840054</string>
     <string name="txt_profile_bt_edit">Editar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="op1">inicio</string>
+    <string name="op2">Mi perfil</string>
+    <string name="op3">Configuracion</string>
+    <string name="op4">Cerrar sesion</string>
 
 </resources>
