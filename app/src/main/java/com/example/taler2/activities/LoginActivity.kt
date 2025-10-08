@@ -11,6 +11,7 @@ import com.example.taler2.R
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -21,10 +22,21 @@ class LoginActivity : AppCompatActivity() {
         val etEmail: EditText = findViewById(R.id.cont_email)
         val etPassword: EditText = findViewById(R.id.cont_email2)
 
+        // Inicializar SharedPreferences
+        sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
+
         btLogin.setOnClickListener {
-            comparacionLogin(etEmail,etPassword)
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
+            val email = etEmail.text.toString().trim()
+            val password = etPassword.text.toString().trim()
+
+            // Validar credenciales
+            if (validateCredentials(email, password)) {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish() // Finalizar LoginActivity para evitar volver con "Atrás"
+            } else {
+                Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
+            }
         }
 
         tvRegister.setOnClickListener {
@@ -36,19 +48,14 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RecPasswordActivity::class.java)
             startActivity(intent)
         }
-
     }
-    private fun comparacionLogin(etEmail: EditText, etPassword: EditText) {
-        val email = etEmail.text.toString()
-        val password = etPassword.text.toString()
-        val sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
+
+    private fun validateCredentials(email: String, password: String): Boolean {
+        // Recuperar las credenciales guardadas en SharedPreferences
         val savedEmail = sharedPreferences.getString("email", "")
         val savedPassword = sharedPreferences.getString("password", "")
-        if (email == savedEmail && password == savedPassword) {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        } else {
-            Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
-        }
+
+        // Comparar las credenciales ingresadas con las guardadas
+        return email == savedEmail && password == savedPassword
     }
 }

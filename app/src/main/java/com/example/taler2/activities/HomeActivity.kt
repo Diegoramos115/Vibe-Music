@@ -17,15 +17,16 @@ class HomeActivity : AppCompatActivity() {
         val bt_login = findViewById<Button>(R.id.bt_login)
         val tvRegister: TextView = findViewById(R.id.tv_reg)
 
+        bt_login.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
         tvRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
 
 
-
-    }
-    private fun setupOnClickListener() {
 
     }
 }
