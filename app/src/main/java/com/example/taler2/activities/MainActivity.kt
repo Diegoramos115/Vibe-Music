@@ -18,11 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Inicializar el DrawerLayout y NavigationView
         drawerLayout = findViewById(R.id.drawerLayout)
         navigationView = findViewById(R.id.navigationView)
 
-        // Configurar los clics en el menú lateral
         setupNavigationMenu()
     }
 
@@ -30,30 +28,22 @@ class MainActivity : AppCompatActivity() {
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.op2 -> {
-                    // Redirigir a ProfileActivity
                     val intent = Intent(this, ProfileActivity::class.java)
                     startActivity(intent)
                 }
-                // Aquí puedes manejar otros ítems del menú
                 R.id.op1 -> {
-                    // Por ejemplo, redirigir al Home o manejar otra opción
                 }
                 R.id.op3 -> {
-                    // Manejar la opción de configuración o similar
                 }
                 R.id.op4 -> {
-                    // Manejar el cierre de sesión o cualquier otra acción
                 }
             }
-
-            // Cerrar el menú lateral después de procesar el clic
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
     }
 
     override fun onBackPressed() {
-        // Cerrar el menú lateral si está abierto al presionar "Atrás"
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {

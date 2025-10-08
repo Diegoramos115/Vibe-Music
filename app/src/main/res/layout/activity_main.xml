@@ -6,20 +6,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Contenido principal de la pantalla -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- HeaderFragment -->
         <fragment
             android:id="@+id/headerFragment"
             android:name="com.example.taler2.fragments.HeaderFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <!-- Contenedor principal -->
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
@@ -27,7 +24,6 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-    <!-- Menú lateral -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
         android:layout_width="wrap_content"
@@ -35,5 +31,4 @@
         android:layout_gravity="start"
         app:menu="@menu/menu_nav"
         android:background="@android:color/white" />
-
 </androidx.drawerlayout.widget.DrawerLayout>

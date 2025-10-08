@@ -28,12 +28,10 @@ class HeaderFragment : Fragment() {
         val btnMenu = view.findViewById<ImageButton>(R.id.btn_menu)
         val navigationView = activity?.findViewById<NavigationView>(R.id.navigationView)
 
-        // Configurar el DrawerLayout al cargar la vista
         btnMenu.post {
             drawerLayout = activity?.findViewById(R.id.drawerLayout)
         }
 
-        // Manejar el clic del botón del menú lateral
         btnMenu.setOnClickListener {
             val drawer = drawerLayout
             if (drawer != null) {
@@ -45,7 +43,6 @@ class HeaderFragment : Fragment() {
             }
         }
 
-        // Manejar clics en los elementos del menú
         navigationView?.setNavigationItemSelectedListener { menuItem ->
             handleMenuItemClick(menuItem)
         }
@@ -56,13 +53,11 @@ class HeaderFragment : Fragment() {
     private fun handleMenuItemClick(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
             R.id.op2 -> {
-                // Redirigir a ProfileActivity
                 val intent = Intent(activity, ProfileActivity::class.java)
                 startActivity(intent)
                 drawerLayout?.closeDrawer(GravityCompat.START) // Cerrar el menú lateral
                 return true
             }
-            // Manejar otros ítems si es necesario
         }
         return false
     }

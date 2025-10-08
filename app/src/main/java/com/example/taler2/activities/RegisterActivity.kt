@@ -25,9 +25,8 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register) // 👈 asegúrate que sea el XML correcto
+        setContentView(R.layout.activity_register)
 
-        // Inicializar vistas
         contName = findViewById(R.id.cont_name)
         contLastName = findViewById(R.id.cont_lastName)
         contEmail = findViewById(R.id.cont_email)
@@ -63,7 +62,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun validateFields(names: String, lastnames: String,email: String, phone : String, password: String, password2: String): Boolean {
+    private fun validateFields(names: String, lastnames: String, email: String, phone: String, password: String, password2: String): Boolean {
         if (names.isEmpty()) {
             Toast.makeText(this, "Por favor ingrese su nombre", Toast.LENGTH_SHORT).show()
             return false
@@ -76,10 +75,9 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "Por favor ingrese un email válido", Toast.LENGTH_SHORT).show()
             return false
         }
-        if(phone.isEmpty()){
+        if (phone.isEmpty()) {
             Toast.makeText(this, "Por favor ingrese su teléfono", Toast.LENGTH_SHORT).show()
             return false
-
         }
         if (password.isEmpty()) {
             Toast.makeText(this, "Por favor ingrese su contraseña", Toast.LENGTH_SHORT).show()
@@ -93,13 +91,8 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             return false
         }
-
         if (!checkTerms.isChecked) {
-            Toast.makeText(
-                this,
-                "Por favor acepte los términos y condiciones",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast.makeText(this, "Por favor acepte los términos y condiciones", Toast.LENGTH_SHORT).show()
             return false
         }
         return true
@@ -112,7 +105,6 @@ class RegisterActivity : AppCompatActivity() {
         editor.putString("email", email)
         editor.putString("phone", phone)
         editor.putString("password", password)
-
         editor.apply()
     }
 }

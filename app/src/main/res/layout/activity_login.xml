@@ -13,7 +13,6 @@
         android:gravity="center_horizontal"
         android:padding="16dp">
 
-        <!-- Logo y Nombre de la App -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +36,6 @@
                 android:textSize="48sp" />
         </LinearLayout>
 
-        <!-- Texto de Bienvenida -->
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
@@ -49,7 +47,6 @@
             android:textSize="24sp"
             android:layout_marginTop="16dp" />
 
-        <!-- Campo de Correo Electrónico -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,14 +54,12 @@
             android:gravity="center_vertical"
             android:layout_marginTop="24dp">
 
-            <!-- Nuevo ícono de usuario -->
             <ImageView
                 android:id="@+id/img_user"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 app:srcCompat="@drawable/ic_user_profile" />
 
-            <!-- Cuadro de texto corregido -->
             <EditText
                 android:id="@+id/cont_email"
                 android:layout_width="0dp"
@@ -80,7 +75,6 @@
                 android:padding="8dp" />
         </LinearLayout>
 
-        <!-- Campo de Contraseña -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -94,7 +88,6 @@
                 android:layout_height="56dp"
                 app:srcCompat="@drawable/password" />
 
-            <!-- Cuadro de texto corregido -->
             <EditText
                 android:id="@+id/cont_email2"
                 android:layout_width="0dp"
@@ -110,7 +103,6 @@
                 android:padding="8dp" />
         </LinearLayout>
 
-        <!-- Botón de Inicio de Sesión -->
         <Button
             android:id="@+id/bt_login"
             android:layout_width="301dp"
@@ -124,7 +116,6 @@
             app:strokeColor="@color/white"
             app:strokeWidth="4dp" />
 
-        <!-- Texto de Recuperar Contraseña -->
         <TextView
             android:id="@+id/tv_rec_password"
             android:layout_width="wrap_content"
@@ -136,7 +127,6 @@
             android:textColor="@color/blue"
             android:textSize="24sp" />
 
-        <!-- Botón de Iniciar Sesión con Google -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_log_goog"
             android:layout_width="271dp"
@@ -155,7 +145,6 @@
             app:iconSize="20dp"
             app:iconTint="@null" />
 
-        <!-- Texto de Registro -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -1,99 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
-        <LinearLayout
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="124dp"
+            android:layout_height="162dp"
+            android:src="@mipmap/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/tv_name_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/name_app"
+            android:textColor="@color/blue"
+            android:textSize="48sp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/txt_update_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="126dp"
-                android:layout_height="90dp"
-                app:srcCompat="@drawable/user" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginStart="24dp">
-
-                <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/txt_userName"
-                    android:textColor="@color/blue"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/tv_lastName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="@string/txt_userLastName"
-                    android:textColor="@color/blue"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/tv_profile_du"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/txt_profile"
+            android:fontFamily="sans-serif"
+            android:text="Actualiza tus datos"
+            android:textAlignment="center"
             android:textColor="@color/blue"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+            android:layout_marginTop="16dp" />
 
-        <TextView
-            android:id="@+id/tv_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/txt_userEmail"
+        <EditText
+            android:id="@+id/cont_name"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/background_pink_tv"
+            android:hint="@string/txt_reg_name"
+            android:inputType="text"
             android:textColor="@color/blue"
-            android:textSize="20sp" />
+            android:padding="10dp"
+            android:layout_marginTop="20dp" />
 
-        <TextView
-            android:id="@+id/tv_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/txt_userPhone"
+        <EditText
+            android:id="@+id/cont_lastName"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/background_pink_tv"
+            android:hint="@string/txt_reg_lname"
+            android:inputType="text"
             android:textColor="@color/blue"
-            android:textSize="20sp" />
+            android:padding="10dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/cont_email"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/background_pink_tv"
+            android:hint="@string/txt_reg_email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/blue"
+            android:padding="10dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/cont_phone"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/background_pink_tv"
+            android:hint="@string/txt_reg_phone"
+            android:inputType="phone"
+            android:textColor="@color/blue"
+            android:padding="10dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/cont_password"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/background_pink_tv"
+            android:hint="@string/txt_reg_password"
+            android:inputType="textPassword"
+            android:textColor="@color/blue"
+            android:padding="10dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/cont_rePassword"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/background_pink_tv"
+            android:hint="@string/txt_reg_repassword"
+            android:inputType="textPassword"
+            android:textColor="@color/blue"
+            android:padding="10dp"
+            android:layout_marginTop="20dp" />
 
         <Button
-            android:id="@+id/bt_edit"
-            android:layout_width="242dp"
-            android:layout_height="75dp"
-            android:layout_marginTop="32dp"
+            android:id="@+id/btn_save_changes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
             android:backgroundTint="@color/pink"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/txt_profile_bt_edit"
-            android:textAlignment="center"
-            android:textSize="35sp"
-            app:strokeColor="@color/white"
-            app:strokeWidth="4dp" />
-
+            android:textColor="@android:color/white"
+            android:layout_marginTop="24dp" />
     </LinearLayout>
 </ScrollView>

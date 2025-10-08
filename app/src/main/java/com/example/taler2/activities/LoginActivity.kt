@@ -22,18 +22,16 @@ class LoginActivity : AppCompatActivity() {
         val etEmail: EditText = findViewById(R.id.cont_email)
         val etPassword: EditText = findViewById(R.id.cont_email2)
 
-        // Inicializar SharedPreferences
         sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
 
         btLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
-            // Validar credenciales
             if (validateCredentials(email, password)) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-                finish() // Finalizar LoginActivity para evitar volver con "Atrás"
+                finish()
             } else {
                 Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
             }
@@ -51,11 +49,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun validateCredentials(email: String, password: String): Boolean {
-        // Recuperar las credenciales guardadas en SharedPreferences
         val savedEmail = sharedPreferences.getString("email", "")
         val savedPassword = sharedPreferences.getString("password", "")
-
-        // Comparar las credenciales ingresadas con las guardadas
         return email == savedEmail && password == savedPassword
     }
 }
