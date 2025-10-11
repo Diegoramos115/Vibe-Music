@@ -8,7 +8,6 @@
         android:title="@string/op1"
         app:showAsAction="ifRoom" />
 
-
     <item
         android:id="@+id/op2"
         android:icon="@drawable/ic_user_profile"
@@ -26,5 +25,4 @@
         android:icon="@drawable/ic_logout"
         android:title="@string/op4"
         app:showAsAction="never" />
-
 </menu>

@@ -1,14 +1,17 @@
-package com.example.taler2.activities
+package com.example.taler2.fragments
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.taler2.R
 
-class EditProfileActivity : AppCompatActivity() {
+class EditProfileFragment : Fragment() {
 
     private lateinit var sharedPreferences: SharedPreferences
 
@@ -20,25 +23,34 @@ class EditProfileActivity : AppCompatActivity() {
     private lateinit var contRePassword: EditText
     private lateinit var btnSaveChanges: Button
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_profile)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflar el diseño del fragmento
+        val view = inflater.inflate(R.layout.fragment_edit_profile, container, false)
 
-        contName = findViewById(R.id.cont_name)
-        contLastName = findViewById(R.id.cont_lastName)
-        contEmail = findViewById(R.id.cont_email)
-        contPhone = findViewById(R.id.cont_phone)
-        contPassword = findViewById(R.id.cont_password)
-        contRePassword = findViewById(R.id.cont_rePassword)
-        btnSaveChanges = findViewById(R.id.btn_save_changes)
+        // Inicializar vistas
+        contName = view.findViewById(R.id.cont_name)
+        contLastName = view.findViewById(R.id.cont_lastName)
+        contEmail = view.findViewById(R.id.cont_email)
+        contPhone = view.findViewById(R.id.cont_phone)
+        contPassword = view.findViewById(R.id.cont_password)
+        contRePassword = view.findViewById(R.id.cont_rePassword)
+        btnSaveChanges = view.findViewById(R.id.btn_save_changes)
 
-        sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
+        // Obtener SharedPreferences
+        sharedPreferences = requireActivity().getSharedPreferences("UserData", android.content.Context.MODE_PRIVATE)
 
+        // Cargar datos existentes
         loadUserData()
 
+        // Configurar botón de guardar cambios
         btnSaveChanges.setOnClickListener {
             saveUpdatedData()
         }
+
+        return view
     }
 
     private fun loadUserData() {
@@ -65,12 +77,12 @@ class EditProfileActivity : AppCompatActivity() {
         val rePassword = contRePassword.text.toString().trim()
 
         if (name.isEmpty() || lastName.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty() || rePassword.isEmpty()) {
-            Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
             return
         }
 
         if (password != rePassword) {
-            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -82,8 +94,9 @@ class EditProfileActivity : AppCompatActivity() {
         editor.putString("password", password)
         editor.apply()
 
-        Toast.makeText(this, "Datos actualizados correctamente", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "Datos actualizados correctamente", Toast.LENGTH_SHORT).show()
 
-        finish()
+        // Regresar al fragmento anterior o al perfil
+        requireActivity().supportFragmentManager.popBackStack()
     }
 }

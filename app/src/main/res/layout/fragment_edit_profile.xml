@@ -2,115 +2,93 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="124dp"
-            android:layout_height="162dp"
-            android:src="@mipmap/ic_launcher_foreground" />
-
         <TextView
-            android:id="@+id/tv_name_app"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
-            android:text="@string/name_app"
-            android:textColor="@color/blue"
-            android:textSize="48sp"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:id="@+id/txt_update_user"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:text="Actualiza tus datos"
-            android:textAlignment="center"
-            android:textColor="@color/blue"
+            android:text="Editar Perfil"
             android:textSize="24sp"
-            android:layout_marginTop="16dp" />
+            android:textColor="@color/blue"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-medium" />
 
         <EditText
             android:id="@+id/cont_name"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/background_pink_tv"
-            android:hint="@string/txt_reg_name"
+            android:hint="Nombre"
             android:inputType="text"
-            android:textColor="@color/blue"
             android:padding="10dp"
+            android:background="@drawable/background_pink_tv"
             android:layout_marginTop="20dp" />
 
         <EditText
             android:id="@+id/cont_lastName"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/background_pink_tv"
-            android:hint="@string/txt_reg_lname"
+            android:hint="Apellido"
             android:inputType="text"
-            android:textColor="@color/blue"
             android:padding="10dp"
+            android:background="@drawable/background_pink_tv"
             android:layout_marginTop="20dp" />
 
         <EditText
             android:id="@+id/cont_email"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/background_pink_tv"
-            android:hint="@string/txt_reg_email"
+            android:hint="Correo Electrónico"
             android:inputType="textEmailAddress"
-            android:textColor="@color/blue"
             android:padding="10dp"
+            android:background="@drawable/background_pink_tv"
             android:layout_marginTop="20dp" />
 
         <EditText
             android:id="@+id/cont_phone"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/background_pink_tv"
-            android:hint="@string/txt_reg_phone"
+            android:hint="Teléfono"
             android:inputType="phone"
-            android:textColor="@color/blue"
             android:padding="10dp"
+            android:background="@drawable/background_pink_tv"
             android:layout_marginTop="20dp" />
 
         <EditText
             android:id="@+id/cont_password"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/background_pink_tv"
-            android:hint="@string/txt_reg_password"
+            android:hint="Contraseña"
             android:inputType="textPassword"
-            android:textColor="@color/blue"
             android:padding="10dp"
+            android:background="@drawable/background_pink_tv"
             android:layout_marginTop="20dp" />
 
         <EditText
             android:id="@+id/cont_rePassword"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="@drawable/background_pink_tv"
-            android:hint="@string/txt_reg_repassword"
+            android:hint="Confirmar Contraseña"
             android:inputType="textPassword"
-            android:textColor="@color/blue"
             android:padding="10dp"
+            android:background="@drawable/background_pink_tv"
             android:layout_marginTop="20dp" />
 
         <Button
             android:id="@+id/btn_save_changes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Guardar"
+            android:layout_marginTop="24dp"
+            android:padding="10dp"
             android:backgroundTint="@color/pink"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="24dp" />
+            android:text="Guardar Cambios"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </ScrollView>
